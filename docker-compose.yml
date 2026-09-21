@@ -1,0 +1,15 @@
+services:
+  tile-diagnostics:
+    build: .
+    container_name: tile-diagnostics
+    ports:
+      - "8000:8000"
+    environment:
+      DIAG_DB_PATH: /app/data/diagnostics.db
+      PORT: "8000"
+    volumes:
+      - tile_diag_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  tile_diag_data:
