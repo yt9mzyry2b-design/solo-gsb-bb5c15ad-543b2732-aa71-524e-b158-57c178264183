@@ -1,0 +1,13 @@
+{
+  "tolerance": 1.0,
+  "min_gap_area": 0.0,
+  "max_pairs": 100,
+  "expect_grid": true,
+  "resolution_rel_tol": 0.02,
+  "tiles": [
+    {"tile_id": "T00", "row": 0, "col": 0, "xmin": 0,   "ymin": 0,   "xmax": 100, "ymax": 100, "resolution": 0.1, "crs": "EPSG:32650"},
+    {"tile_id": "T01", "row": 0, "col": 1, "xmin": 100, "ymin": 0,   "xmax": 200, "ymax": 100, "resolution": 0.1, "crs": "EPSG:32650"},
+    {"tile_id": "T10", "row": 1, "col": 0, "xmin": 0,   "ymin": 100, "xmax": 100, "ymax": 200, "resolution": 0.1, "crs": "EPSG:32650"},
+    {"tile_id": "T11", "row": 1, "col": 1, "xmin": 100, "ymin": 100, "xmax": 200, "ymax": 200, "resolution": 0.1, "crs": "EPSG:32650"}
+  ]
+}

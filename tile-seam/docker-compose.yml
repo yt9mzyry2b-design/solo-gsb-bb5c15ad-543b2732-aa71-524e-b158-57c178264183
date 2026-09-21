@@ -1,0 +1,21 @@
+services:
+  tile-seam:
+    build: .
+    image: tile-seam-diagnosis:latest
+    container_name: tile-seam-diagnosis
+    ports:
+      - "8000:8000"
+    volumes:
+      - tile-seam-data:/data
+    environment:
+      # SQLite 数据库文件位置（默认无需任何第三方账号/外部服务）
+      TILE_SEAM_DB: /data/tasks.db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/health').status==200 else 1)"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  tile-seam-data:
